@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="humanName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>用户名不能为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">10</param>
+			<param name="minLength">2</param>
+			<message>用户名长度须在${minLength}和${maxLength}之间</message>
+		</field-validator>
+	</field>
+	<field name="firstKindName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>I级机构不能为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">20</param>
+			<param name="minLength">1</param>
+			<message>I级机构长度须在${minLength}和${maxLength}之间</message>
+		</field-validator>
+	</field>
+	<field name="secondKindName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>II级机构不能为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">20</param>
+			<param name="minLength">1</param>
+			<message>II级机构长度须在${minLength}和${maxLength}之间</message>
+		</field-validator>
+	</field>
+	<field name="thirdKindName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>III级机构不能为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">20</param>
+			<param name="minLength">1</param>
+			<message>III级机构长度须在${minLength}和${maxLength}之间</message>
+		</field-validator>
+	</field>
+	
+	<field name="humanMajorKindName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>职位分类不能为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">20</param>
+			<param name="minLength">1</param>
+			<message>职位分类不能为空长度须在${minLength}和${maxLength}之间</message>
+		</field-validator>
+	</field>
+	
+	<field name="humanMajorName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>职称不能为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">20</param>
+			<param name="minLength">1</param>
+			<message>职称长度须在${minLength}和${maxLength}之间</message>
+		</field-validator>
+	</field>
+</validators>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+
+	<package name="struts2" extends="struts-default,json-default">
+		<global-results>
+			<result name="err">/jsp/human/actionError.jsp</result>
+			<result name="noPower">/jsp/human/noPower.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.sql.SQLException"
+				result="err" />
+			<exception-mapping result="err" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		<action name="tblPositionReleaseAction" class="TblPositionReleaseAction">
+			<result name="success" >/html/~position/tips.jsp</result>
+			<result name="spliter">/html/~position/issue_modify_list.jsp</result>
+			<result name="manager">/html/~position/issue_check.jsp</result>
+			<result name="modify">/html/~position/issue_modify.jsp</result>
+			<result name="check">/html/~resume/i_register.jsp</result>
+			<result name="regist">/html/~position/issue_register.jsp</result>
+		</action>
+		
+		<action name="tblResumeAction" class="TblResumeAction">
+			<result name="success">/html/~resume/tips.jsp</result>
+			<result name="spliter">/html/~resume/having.jsp</result>
+			<result name="valid">/html/~resume/having1.jsp</result>
+			<result name="check">/html/~resume/valid_check.jsp</result>
+			<result name="validSpliter">/html/~quiz/having_option.jsp</result>
+			<result name="interview">/html/~quiz/register.jsp</result>
+		</action>
+		
+		<action name="tblInterviewAction" class="TblInterviewAction">
+			<result name="success">/html/~quiz/tips.jsp</result>
+			<result name="success1">/html/~quiz/tips1.jsp</result>
+			<result name="registedSpliter">/html/~quiz/having_option1.jsp</result>
+			<result name="registCheck">/html/~quiz/having1.jsp</result>
+			<result name="passCheck">/html/~employ/request.jsp</result>
+			<result name="passCheckSpliter">/html/~employ/pass_check.jsp</result>
+			<result name="passSpliter">/html/~employ/check.jsp</result>
+			<result name="pass" type="redirectAction">tblInterviewAction!pass.action</result>
+			<result name="passResult">/html/~employ/verify.jsp</result>
+		</action>
+		<action name="tblQuestionsAction" class="TblQuestionsAction">
+			<result name="success">/html/~topic/tips.jsp</result>
+			<result name="spliter">/html/~topic/check_option.jsp</result>
+			<result name="check">/html/~topic/modify.jsp</result>
+			<result name="regist">/html/~topic/register.jsp</result>
+		</action>
+		
+		<action name="tblFirstClassAction" class="TblFirstClassAction">
+<!-- 			<result name="success">/html/~sale/success.html</result> -->
+			<result name="success">/html/~sale/success.html</result>
+			<result name="find">/html/~sale/mode.jsp</result>
+			<result name="spliter">/html/~sale/list.jsp</result>
+			<result name="modify">/jsp/modify.jsp</result>
+		</action>
+		
+		<action name="tblSecondClassAction" class="TblSecondClassAction">
+			<result name="success">/html/~sale/successII.html
+			</result>
+			<result name="find">/html/~sale/mode2.jsp</result>
+			<result name="spliter">/html/~sale/list2.jsp</result>
+			<result name="modify">/jsp/modify.jsp</result>
+		</action>
+		
+		<action name="tblThirdClassAction" class="TblThirdClassAction">
+			<result name="success">/html/~sale/successIII.html
+			</result>
+			<result name="find">/html/~sale/mode3.jsp</result>
+			<result name="spliter">/html/~sale/list3.jsp</result>
+			<result name="modify">/jsp/modify.jsp</result>
+		</action>
+		
+		<action name="tblMajorClassifyAction" class="TblMajorClassifyAction">
+			<result name="success">/html/~sale/successIX.html
+			</result>
+			<result name="find">/html/~sale/mode5.jsp</result>
+			<result name="spliter">/html/~sale/list5.jsp</result>
+			<result name="modify">/jsp/modify.jsp</result>
+		</action>
+		
+		<action name="tblMajorNameAction" class="TblMajorNameAction">
+			<result name="success">/html/~sale/successX.html
+			</result>
+			<result name="find">/html/~sale/mode4.jsp</result>
+			<result name="spliter">/html/~sale/list4.jsp</result>
+			<result name="modify">/jsp/modify.jsp</result>
+		</action>
+		
+		<action name="tblPublicAttributeAction" class="TblPublicAttributeAction">
+			<result name="success">/html/~sale/successXI.html
+			</result>
+			<result name="find">/html/~sale/mode6.jsp</result>
+			<result name="spliter">/html/~sale/list6.jsp</result>
+			<result name="modify">/jsp/modify.jsp</result>
+		</action>
+		
+		<action name="tblUserAction" class="TblUserAction">
+			<result name="find">/html/~sale/mode6.jsp</result>
+			<result name="modify">/jsp/modify.jsp</result>
+			<result name="update">/html/userList.jsp</result>
+			<result name="findAllUsers">/html/userList.jsp</result>
+			<result name="addUserSuccess">/html/updateSuccess.html</result>
+		</action>
+		
+		<!-- 薪酬标准 -->
+		  <action name="tblStandardSalaryAction" class="TblStandardSalaryAction">
+			<result name="success" type="redirectAction">
+			   tblStandardSalaryAction!fenye.action
+			</result>
+			<result name="check">/html/~pay_norm/check.jsp</result>
+			<result name="fenye">/html/~pay_norm/check.jsp</result>
+			<result name="mo_check">/html/~pay_norm/mo_check.jsp</result>
+			<result name="mo_check1">/html/~pay_norm/mo_check.jsp</result>
+			<result name="re_check">/html/~pay_norm/re_check.jsp</result>
+			<result name="sp_recheck">/html/~pay_norm/sp_recheck.jsp</result>
+			<result name="spliter">/html/~pay_norm/check.jsp</result>
+			<result name="modify">/html/~pay_norm/modify.jsp</result>
+			<result name="sp_modify">/html/~pay_norm/sp_modify.jsp</result>
+			<result name="register">/html/~pay_norm/re_register.jsp</result>
+			<result name="sp_check">/html/~pay_norm/sp_check.jsp</result>
+			<result name="sp_check1">/html/~pay_norm/sp_check.jsp</result>
+			<result name="sp_register">/html/~pay_norm/sp_register.jsp</result>
+		</action>
+		
+		<!-- 薪酬 -->
+		  <action name="tblStandardSalaryDetailAction" class="TblStandardSalaryDetailAction">
+			<result name="success" type="redirectAction">
+			    tblStandardSalaryDetailAction!spliter.action
+			</result>
+			<result name="find">/html/~pay_norm/spliter.jsp</result>
+			<result name="sp_check">/html/~pay_norm/sp_check.jsp</result> 
+			<result name="spliter">/html/~pay_norm/spliter.jsp</result>
+			<result name="modify">/html/~pay_norm/sp_modify.jsp</result>
+		</action>
+		
+		<action name="bindAction" class="BindAction">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="bindPublicAction" class="BindPublicAttrAction">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="bindQustionAction" class="BindQustionAction">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+	<package name="data" extends="json-default,struts-default">
+		<global-results>
+			<result name="err">/jsp/human/actionError.jsp</result>
+			<result name="noPower">/jsp/human/noPower.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.sql.SQLException"
+				result="err" />
+			<exception-mapping result="err" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		<action name="FirstClassAction" class="TblFirstClassAction">
+			<result type="json">
+				<param name="root">
+					tblFirstClassList
+				</param>
+			</result>
+		</action>
+		
+		<action name="MajorClassifyAction" class="TblMajorClassifyAction">
+			<result type="json">
+				<param name="root">
+					tblMajorClassifyList
+				</param>
+			</result>
+		</action>
+		
+		<action name="UserAction" class="TblUserAction">
+			<result type="json">
+				<param name="root">
+					tbluser
+				</param>
+			</result>
+			<result name="logout" type="redirect">/html/login.jsp</result>
+		</action>
+	</package>
+	
+	<package name="data2" extends="json-default">
+	<global-results>
+			<result name="err">/jsp/human/actionError.jsp</result>
+			<result name="noPower">/jsp/human/noPower.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.sql.SQLException"
+				result="err" />
+			<exception-mapping result="err" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		<action name="SecondClassAction" class="TblSecondClassAction">
+			<result type="json">
+				<param name="root">
+					tblSecondClassList
+				</param>
+			</result>
+		</action>
+	</package>
+	<package name="human" extends="struts-default">
+		<global-results>
+			<result name="err">/jsp/human/actionError.jsp</result>
+			<result name="noPower">/jsp/human/noPower.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.sql.SQLException"
+				result="err" />
+			<exception-mapping result="err" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		<!-- <action name="add" class="HumanAction" method="doSave"> <result name="success">/jsp/human/actionSuccess.jsp</result> 
+			</action> -->
+		<action name="add" class="HumanAction" method="doSave">
+			<result name="success">/html/human/actionSuccess.jsp</result>
+			<result name="input">/html/human/modify.jsp?type=add</result>
+		</action>
+		<action name="edit" class="HumanAction" method="doFill">
+			<result name="success">/html/human/modify.jsp</result>
+		</action>
+		<action name="update" class="HumanUpdatekAction" method="updateSuccess">
+			<result name="success">/html/human/actionSuccess.jsp</result>
+			<result name="input">/html/human/modify.jsp</result>
+		</action>
+		<action name="show" class="HumanAction" method="doShow">
+			<result name="success">/html/human/list.jsp</result>
+		</action>
+		<action name="page" class="HumanAction" method="findPage">
+			<result name="success">/html/human/actionSuccess.jsp</result>
+		</action>
+
+		<!-- 获取待复核的列表 -->
+		<action name="findCheckList" class="HumanAction" method="findCheckList">
+			<result name="success">/html/human/checkList.jsp</result>
+		</action>
+
+		<!-- 获取可修改的档案列表 -->
+		<action name="findUpdateList" class="HumanAction" method="findUpdateList">
+			<result name="success">/html/human/updateList.jsp</result>
+		</action>
+
+		<!-- 获取可删除的档案列表 -->
+		<action name="findDeleteList" class="HumanAction" method="findDeleteList">
+			<result name="success">/html/human/deleteList.jsp</result>
+		</action>
+
+		<!-- 获取所有档案列表 -->
+		<action name="findShowList" class="HumanAction" method="findShowList">
+			<result name="success">/html/human/showlist.jsp</result>
+		</action>
+
+		<action name="checked" class="HumanCheckAction" method="checkSuccess">
+			<result name="success" type="redirectAction">human/findCheckList.action
+			</result>
+			<result name="input">/html/human/modify.jsp</result>
+
+		</action>
+		<action name="delete" class="HumanAction" method="doDelete">
+			<result name="success" type="redirectAction">findDeleteList</result>
+		</action>
+
+		<action name="deleteForever" class="HumanAction" method="doDeleteForever">
+			<result name="success" type="redirectAction">findDeleteList</result>
+		</action>
+
+		<!-- 恢复删除的数据 -->
+		<action name="reDelete" class="HumanAction" method="doReDelete">
+			<result name="success" type="redirectAction">findDeleteList</result>
+		</action>
+	</package>
+
+	<package name="human/ajax" extends="json-default">
+		<action name="getFirstClassList" class="HumanAjax" method="getFiresClassList">
+			<result type="json">
+				<param name="includeProperties">
+					firstClassList.*
+				</param>
+			</result>
+		</action>
+
+		<action name="getSecondClassByFirstClass" class="HumanAjax"
+			method="getSecondClassByFirstClass">
+			<result name="secondClass" type="json">
+				<param name="includeProperties">
+					secondClassList.*
+				</param>
+			</result>
+		</action>
+
+		<action name="getThirdClassBySecondClass" class="HumanAjax"
+			method="getThirdClassBySecondClass">
+			<result name="thirdClass" type="json">
+				<param name="includeProperties">
+					thirdClassList.*
+				</param>
+			</result>
+		</action>
+
+		<action name="getMajorClassify" class="HumanAjax" method="getMajorClassify">
+			<result type="json">
+				<param name="includeProperties">
+					majorClassifyList.*
+				</param>
+			</result>
+		</action>
+
+		<action name="getPublicAttMapByType" class="HumanAjax"
+			method="getPublicAttMapByType">
+			<result type="json">
+				<param name="includeProperties">
+					attNames.*
+				</param>
+			</result>
+		</action>
+
+		<action name="getTblStandardSalaryAll" class="HumanAjax"
+			method="getTblStandardSalaryAll">
+			<result type="json">
+				<param name="includeProperties">
+					standardSalaryList.*
+				</param>
+			</result>
+		</action>
+
+		<action name="getTblMajorNameByClassId" class="HumanAjax"
+			method="getTblMajorNameByClassId">
+			<result type="json">
+				<param name="includeProperties">
+					majorNameList.*
+				</param>
+			</result>
+		</action>
+
+	</package>
+	
+</struts>
+ 
