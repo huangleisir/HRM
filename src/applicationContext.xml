@@ -12,7 +12,6 @@
   http://www.springframework.org/schema/aop
   http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-
 <!-- Spring有两方面功能：IOC，AOP，AOP又有两方面：@Aspect和TransactionManager -->
 <!-- 下面这个会首先加载进内存，表面该项目是支持@Aspect注解的，如果注释掉，则被@Aspect注释过的类都不会调用 -->
 <!-- HumanPermissionAspect类也会被调用 -->
